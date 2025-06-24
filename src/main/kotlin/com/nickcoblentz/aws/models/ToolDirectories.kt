@@ -10,7 +10,8 @@ import kotlin.io.path.exists
 
 enum class ToolOutputDirectory(val value: String) {
    BASE("Base"),
-    CREDENTIALREPORTDIR("CredentialReport")
+    CREDENTIALREPORTDIR("CredentialReport"),
+    IAMDIR("iam")
 }
 
 enum class ToolInputDirectory(val value: String) {
@@ -20,7 +21,10 @@ enum class ToolInputDirectory(val value: String) {
 enum class ToolOutputFile(val value: String) {
     CREDENTIALREPORTFILE("CredentialReport"),
     CREDENTIALREPORTDOWNLOADEDFILE("CredentialReportDownloaded"),
-    CREDENTIALREPORTANALYSISFILE("CredentialReportAnalysis")
+    CREDENTIALREPORTANALYSISFILE("CredentialReportAnalysis"),
+    IAMSUMMARY("IamSummary"),
+    IAMUSERS("IamUsers"),
+    IAMPOLICIES("IamPolicies")
 }
 
 enum class ToolOutputExtension(val value: String) {
@@ -38,6 +42,7 @@ class ToolDirectories(val inputBaseDirectory: Path, val outputBaseDirectory: Pat
         require(inputBaseDirectory.exists()) { "Input base directory ${inputBaseDirectory.absolutePathString()} does not exist"}
         toolOutputDirectories[ToolOutputDirectory.BASE] = outputBaseDirectory
         toolInputDirectories[ToolInputDirectory.BASEDIR] = inputBaseDirectory
+        ensureOutputDirectoriesCreated()
     }
 
     fun withNewOutputDirectory(newDirectory: ToolOutputDirectory, parentDirectory : ToolOutputDirectory = ToolOutputDirectory.BASE) {

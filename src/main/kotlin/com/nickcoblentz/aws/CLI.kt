@@ -3,13 +3,11 @@ package com.nickcoblentz.aws
 import com.nickcoblentz.aws.models.VirtueAWSContext
 import com.github.ajalt.clikt.core.*
 import com.github.ajalt.clikt.parameters.options.default
-import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.nickcoblentz.aws.commands.CredentialReport
-import com.nickcoblentz.aws.commands.Dump
+import com.nickcoblentz.aws.commands.Iam
 import java.nio.file.Paths
 import kotlin.io.path.Path
-import kotlin.io.path.absolutePathString
 
 /**
  * Main CLI class for the KubePentest application.
@@ -50,6 +48,6 @@ class CLI : CliktCommand(name = "java -jar virtueaws-all.jar") {
  * Main entry point for the application
  */
 fun main(args: Array<String>) = CLI().subcommands(
-    Dump(),
+    Iam(),
     CredentialReport()
 ).main(args)

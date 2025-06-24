@@ -19,7 +19,10 @@ class VirtueAWSContext(outputBaseDirectoryPath : Path, val awsConfigPath : Strin
 
 
     init {
-        toolDirectories.withNewOutputDirectory(ToolOutputDirectory.CREDENTIALREPORTDIR)
+        ToolOutputDirectory.values().forEach { toolOutputDirectory ->
+            if(toolOutputDirectory.name!="BASE")
+                toolDirectories.withNewOutputDirectory(toolOutputDirectory)
+        }
         toolDirectories.ensureOutputDirectoriesCreated()
     }
 
