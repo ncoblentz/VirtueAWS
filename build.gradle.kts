@@ -33,9 +33,11 @@ dependencies {
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.1")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.1")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.19.1")
-    implementation("com.github.ncoblentz:PentestLibrary:v0.1.2")
+    implementation("com.github.ncoblentz:PentestLibrary:v0.1.3")
     implementation("aws.sdk.kotlin:iam:1.4.109")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("aws.sdk.kotlin:lambda:1.4.109")
+    implementation("io.ktor:ktor-client-cio:3.2.0")
 }
 
 

@@ -11,7 +11,10 @@ import kotlin.io.path.exists
 enum class ToolOutputDirectory(val value: String) {
    BASE("Base"),
     CREDENTIALREPORTDIR("CredentialReport"),
-    IAMDIR("iam")
+    IAMDIR("iam"),
+    LAMBDASOURCES("lambdasources"),
+    LAMBDACODE("lambdacode"),
+    LAMBDAANALYSIS("lambdaanalysis")
 }
 
 enum class ToolInputDirectory(val value: String) {
@@ -22,9 +25,14 @@ enum class ToolOutputFile(val value: String) {
     CREDENTIALREPORTFILE("CredentialReport"),
     CREDENTIALREPORTDOWNLOADEDFILE("CredentialReportDownloaded"),
     CREDENTIALREPORTANALYSISFILE("CredentialReportAnalysis"),
-    IAMSUMMARY("IamSummary"),
+    IAMUSERSUMMARY("IamUserSummary"),
+    IAMROLESUMMARY("IamRoleSummary"),
     IAMUSERS("IamUsers"),
-    IAMPOLICIES("IamPolicies")
+    IAMUSERPOLICIES("IamUserPolicies"),
+    IAMROLEPOLICIES("IamRolePolicies"),
+    IAMROLES("IamRoles"),
+    ANALYZEDUSERS("AnalyzedUsers"),
+    LAMBDASUMMARY("LambdaSummary")
 }
 
 enum class ToolOutputExtension(val value: String) {
